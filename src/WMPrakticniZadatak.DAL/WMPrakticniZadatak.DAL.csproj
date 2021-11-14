@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WMPrakticniZadatak.Common\WMPrakticniZadatak.Common.csproj" />
+  </ItemGroup>
+
 </Project>

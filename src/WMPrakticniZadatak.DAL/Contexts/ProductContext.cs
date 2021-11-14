@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using WMPrakticniZadatak.DAL.Models;
+using WMPrakticniZadatak.Common.Models;
 
 namespace WMPrakticniZadatak.DAL.Contexts
 {

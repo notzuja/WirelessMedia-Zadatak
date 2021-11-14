@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\WMPrakticniZadatak.DAL\WMPrakticniZadatak.DAL.csproj" />
-  </ItemGroup>
-
 </Project>

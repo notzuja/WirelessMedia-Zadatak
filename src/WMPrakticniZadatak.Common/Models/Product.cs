@@ -1,8 +1,10 @@
-﻿namespace WMPrakticniZadatak.Common.Models
+﻿using System;
+
+namespace WMPrakticniZadatak.Common.Models
 {
-    public class ProductDTO
+    public class Product
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }
@@ -10,10 +12,11 @@
         public string Supplier { get; set; }
         public decimal Price { get; set; }
 
-        public Product MapDtoToDataModel(bool mapId)
+        public ProductDTO MapDataModeltoDto()
         {
-            var jsonProduct = new Product
+            return new ProductDTO
             {
+                Id = Id.ToString(),
                 Name = Name,
                 Description = Description,
                 Manufacturer = Manufacturer,
@@ -21,19 +24,6 @@
                 Price = Price,
                 Supplier = Supplier
             };
-
-            if (!mapId) return jsonProduct;
-
-            if (Guid.TryParse(Id, out var jsonProductGuid) && mapId)
-            {
-                jsonProduct.Id = jsonProductGuid;
-
-                return jsonProduct;
-            }
-            else
-            {
-                throw new ArgumentException("Invalid product GUID");
-            }
         }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.Extensions.Options;
 using System.Text.Json;
 using WMPrakticniZadatak.Common.Models;
 using WMPrakticniZadatak.Common.Settings;
-using WMPrakticniZadatak.DAL.Models;
 using WMPrakticniZadatak.DAL.Repositories.JSON.Interfaces;
 
 namespace WMPrakticniZadatak.DAL.Repositories.JSON

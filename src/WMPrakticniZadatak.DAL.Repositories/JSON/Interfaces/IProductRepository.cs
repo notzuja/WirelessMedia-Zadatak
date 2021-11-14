@@ -1,5 +1,4 @@
 ﻿using WMPrakticniZadatak.Common.Models;
-using WMPrakticniZadatak.DAL.Models;
 
 namespace WMPrakticniZadatak.DAL.Repositories.JSON.Interfaces
 {

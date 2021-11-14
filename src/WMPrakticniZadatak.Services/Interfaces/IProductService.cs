@@ -1,14 +1,13 @@
 ﻿using WMPrakticniZadatak.Common.Models;
-using WMPrakticniZadatak.DAL.Models;
 
 namespace WMPrakticniZadatak.Services.Interfaces
 {
     public interface IProductService
     {
-        Product CreateProduct(ProductDTO product);
-        Product GetProductById(string id);
-        List<Product> GetProducts();
-        Product UpdateProduct(ProductDTO product);
+        ProductDTO CreateProduct(ProductDTO product);
+        ProductDTO GetProductById(string id);
+        List<ProductDTO> GetProducts();
+        ProductDTO UpdateProduct(ProductDTO product);
         bool DeleteProduct(string id);
     }
 }
