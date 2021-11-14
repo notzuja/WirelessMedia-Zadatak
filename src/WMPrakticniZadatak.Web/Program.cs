@@ -3,6 +3,8 @@ using WMPrakticniZadatak.Common.Settings;
 using WMPrakticniZadatak.DAL.Contexts;
 using WMPrakticniZadatak.DAL.Repositories.JSON;
 using WMPrakticniZadatak.DAL.Repositories.JSON.Interfaces;
+using WMPrakticniZadatak.Services;
+using WMPrakticniZadatak.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,7 @@ builder.Services.AddDbContext<ProductContext>(options => options.UseSqlServer(bu
 // Adding access to configuration via Options pattern
 builder.Services.Configure<DataAccessOptions>(builder.Configuration.GetSection("DataAccess"));
 builder.Services.AddScoped<IProductRepository, ProductJsonRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
