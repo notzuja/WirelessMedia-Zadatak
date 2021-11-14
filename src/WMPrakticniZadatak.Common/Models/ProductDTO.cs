@@ -12,7 +12,7 @@ namespace WMPrakticniZadatak.Common.Models
         public string Supplier { get; set; }
         public decimal Price { get; set; }
 
-        public Product MapDtoToDataModel()
+        public Product MapDtoToDataModel(bool mapId)
         {
             var jsonProduct = new Product
             {
@@ -24,16 +24,18 @@ namespace WMPrakticniZadatak.Common.Models
                 Supplier = Supplier
             };
 
-            if (Guid.TryParse(Id, out var jsonProductGuid))
+            if (!mapId) return jsonProduct;
+
+            if (Guid.TryParse(Id, out var jsonProductGuid) && mapId)
             {
                 jsonProduct.Id = jsonProductGuid;
+
+                return jsonProduct;
             }
             else
             {
                 throw new ArgumentException("Invalid product GUID");
             }
-
-            return jsonProduct;
         }
     }
 }

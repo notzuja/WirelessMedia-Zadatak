@@ -1,0 +1,47 @@
+[
+    {
+        "Id" : "A19B0B0D-5254-44D9-9DDF-07301F44A677",
+        "Name" : "Hemijska olovka",
+        "Description" : "Hemijska olovka, 0.5mm, plava",
+        "Category" : "Uredski pribor",
+        "Manufacturer" : "Pilot",
+        "Supplier" : "Dobavljac 1",
+        "Price" : 1099.99
+    },
+    {
+        "Id" : "CC09AA1F-A21B-4A3B-9C6D-BC9E5E3CA912",
+        "Name" : "Makaze",
+        "Description" : "Makaze za papir",
+        "Category" : "Uredski pribor",
+        "Manufacturer" : "Maped",
+        "Supplier" : "Dobavljac 1",
+        "Price" : 569.99
+    },
+    {
+        "Id" : "F5388BCF-ADDA-469A-811D-E23F67AAFD64",
+        "Name" : "Heftalica",
+        "Description" : "Heftalica",
+        "Category" : "Uredski pribor",
+        "Manufacturer" : "Maped",
+        "Supplier" : "Dobavljac 1",
+        "Price" : 779.99
+    },
+    {
+        "Id" : "C51A9968-6DA5-47F7-9E96-91EEAA0DBC0D",
+        "Name" : "A4 papir",
+        "Description" : "Pakovanje A4 papira za print, 500 kom, 80g",
+        "Category" : "Uredski pribor",
+        "Manufacturer" : "Double A",
+        "Supplier" : "Dobavljac 1",
+        "Price" : 895.99
+    },
+    {
+        "Id" : "5B522B5A-D573-4228-9541-1C9AB63BC6EB",
+        "Name" : "Tehnicka olovka",
+        "Description" : "Tehnicka olovka, 0.7mm",
+        "Category" : "Uredski pribor",
+        "Manufacturer" : "Rotring",
+        "Supplier" : "Dobavljac 1",
+        "Price" : 1299.99
+    }   
+]

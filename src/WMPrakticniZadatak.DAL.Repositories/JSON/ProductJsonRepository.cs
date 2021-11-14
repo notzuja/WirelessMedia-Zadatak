@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System.Text.Json;
 using WMPrakticniZadatak.Common.Models;
 using WMPrakticniZadatak.Common.Settings;
@@ -10,17 +11,21 @@ namespace WMPrakticniZadatak.DAL.Repositories.JSON
     public class ProductJsonRepository : IProductRepository
     {
         private readonly DataAccessOptions _dataAccessOptions;
+        private readonly IConfiguration _configuration;
         private readonly string _jsonDataPath;
 
-        public ProductJsonRepository(IOptions<DataAccessOptions> dataAccessOptions)
+        public ProductJsonRepository(IOptions<DataAccessOptions> dataAccessOptions, IConfiguration configuration)
         {
             _dataAccessOptions = dataAccessOptions.Value ?? throw new ArgumentNullException(nameof(dataAccessOptions));
-            _jsonDataPath = _dataAccessOptions.JsonFileLocation ?? throw new ArgumentNullException(nameof(dataAccessOptions));
+            _configuration = configuration;
+
+            _jsonDataPath = $@"{_configuration.GetValue<string>("contentRoot").TrimEnd('\\')}{_dataAccessOptions.JsonFileLocation.TrimStart('.')}";
         }
 
         public Product Create(ProductDTO product)
         {
-            var jsonProduct = product.MapDtoToDataModel();
+            var jsonProduct = product.MapDtoToDataModel(false);
+            product.Id = Guid.NewGuid().ToString();
 
             try
             {
@@ -65,7 +70,7 @@ namespace WMPrakticniZadatak.DAL.Repositories.JSON
 
         public Product Update(ProductDTO product)
         {
-            var jsonProduct = product.MapDtoToDataModel();
+            var jsonProduct = product.MapDtoToDataModel(true);
 
             try
             {

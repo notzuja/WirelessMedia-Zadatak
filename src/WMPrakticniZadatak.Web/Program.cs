@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using WMPrakticniZadatak.Common.Settings;
 using WMPrakticniZadatak.DAL.Contexts;
+using WMPrakticniZadatak.DAL.Repositories.JSON;
+using WMPrakticniZadatak.DAL.Repositories.JSON.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ProductContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WMPrakticniZadatak")), ServiceLifetime.Scoped);
 
 // Adding access to configuration via Options pattern
-builder.Services.Configure<DataAccessOptions>(builder.Configuration);
+builder.Services.Configure<DataAccessOptions>(builder.Configuration.GetSection("DataAccess"));
+builder.Services.AddScoped<IProductRepository, ProductJsonRepository>();
 
 var app = builder.Build();
 
