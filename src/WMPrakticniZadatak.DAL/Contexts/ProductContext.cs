@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 using WMPrakticniZadatak.DAL.Models;
 
 namespace WMPrakticniZadatak.DAL.Contexts

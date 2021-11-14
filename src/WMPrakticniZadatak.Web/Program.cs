@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using WMPrakticniZadatak.DAL.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Registering EF Core dbContexts as DI services
 builder.Services.AddDbContext<ProductContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WMPrakticniZadatak")), ServiceLifetime.Scoped);
 
 var app = builder.Build();
