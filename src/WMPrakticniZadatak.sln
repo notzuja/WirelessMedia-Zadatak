@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMPrakticniZadatak.DAL", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMPrakticniZadatak.Web", "WMPrakticniZadatak.Web\WMPrakticniZadatak.Web.csproj", "{67CB6994-F3E1-44BA-B9DA-A91FA6E0F00A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMPrakticniZadatak.DAL.Repositories", "WMPrakticniZadatak.DAL.Repositories\WMPrakticniZadatak.DAL.Repositories.csproj", "{DD6AC20F-08AB-46F5-9FF8-42FD491B901E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMPrakticniZadatak.Common", "WMPrakticniZadatak.Common\WMPrakticniZadatak.Common.csproj", "{FE57464C-6848-48EE-92F1-271D7DA05963}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{67CB6994-F3E1-44BA-B9DA-A91FA6E0F00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67CB6994-F3E1-44BA-B9DA-A91FA6E0F00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67CB6994-F3E1-44BA-B9DA-A91FA6E0F00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6AC20F-08AB-46F5-9FF8-42FD491B901E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6AC20F-08AB-46F5-9FF8-42FD491B901E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6AC20F-08AB-46F5-9FF8-42FD491B901E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6AC20F-08AB-46F5-9FF8-42FD491B901E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE57464C-6848-48EE-92F1-271D7DA05963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE57464C-6848-48EE-92F1-271D7DA05963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE57464C-6848-48EE-92F1-271D7DA05963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE57464C-6848-48EE-92F1-271D7DA05963}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

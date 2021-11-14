@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WMPrakticniZadatak.Common\WMPrakticniZadatak.Common.csproj" />
     <ProjectReference Include="..\WMPrakticniZadatak.DAL\WMPrakticniZadatak.DAL.csproj" />
   </ItemGroup>
 
