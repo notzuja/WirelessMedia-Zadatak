@@ -30,6 +30,8 @@ namespace WMPrakticniZadatak.DAL.Repositories.JSON
             {
                 var products = DeserializeJsonFromFile();
 
+                if(products == null) products = new List<Product>();
+
                 products.Add(jsonProduct);
 
                 var jsonData = JsonSerializer.Serialize(products);
@@ -116,8 +118,16 @@ namespace WMPrakticniZadatak.DAL.Repositories.JSON
 
         private List<Product> DeserializeJsonFromFile()
         {
-            var jsonData = File.ReadAllText(_jsonDataPath);
-            return JsonSerializer.Deserialize<List<Product>>(jsonData);
+            string jsonData;
+            try
+            {
+                jsonData = File.ReadAllText(_jsonDataPath);
+                return JsonSerializer.Deserialize<List<Product>>(jsonData);
+            }
+            catch (FileNotFoundException)
+            {
+                return null;
+            }
         }
     }
 }

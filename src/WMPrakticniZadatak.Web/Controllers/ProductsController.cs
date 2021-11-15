@@ -18,7 +18,7 @@ namespace WMPrakticniZadatak.Web.Controllers
         // GET: Products
         public IActionResult Index()
         {
-            return View(_service.GetProducts().Select(product => MapDtoToViewModel(product)));
+            return View(_service.GetProducts()?.Select(product => MapDtoToViewModel(product)));
         }
 
         // GET: Products/Details/5

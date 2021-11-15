@@ -40,20 +40,20 @@ namespace WMPrakticniZadatak.Services
         {
             if (!Guid.TryParse(id, out Guid productId))
             {
-                throw new ArgumentException("Invalid GUID");
+                return null;
             }
             if (_useJson)
-                return _productRepository.Read(productId).MapDataModeltoDto();
+                return _productRepository.Read(productId)?.MapDataModeltoDto();
 
-            return _dbContext.Products.Find(productId).MapDataModeltoDto();
+            return _dbContext.Products.Find(productId)?.MapDataModeltoDto();
         }
 
         public List<ProductDTO> GetProducts()
         {
             if (_useJson)
-                return _productRepository.ReadAll().Select(x => x.MapDataModeltoDto()).ToList();
+                return _productRepository.ReadAll()?.Select(x => x.MapDataModeltoDto()).ToList();
 
-            return _dbContext.Products.Select(x => x.MapDataModeltoDto()).ToList();
+            return _dbContext.Products?.Select(x => x.MapDataModeltoDto()).ToList();
         }
 
         public ProductDTO UpdateProduct(ProductDTO product)
@@ -66,7 +66,7 @@ namespace WMPrakticniZadatak.Services
             var updatedEntity = _dbContext.Products.Update(dataModel);
             _dbContext.SaveChanges();
 
-            return updatedEntity.Entity.MapDataModeltoDto();
+            return updatedEntity.Entity?.MapDataModeltoDto();
         }
 
         public bool DeleteProduct(string id)
