@@ -24,7 +24,7 @@ namespace WMPrakticniZadatak.DAL.Repositories.JSON
         public Product Create(ProductDTO product)
         {
             var jsonProduct = product.MapDtoToDataModel(false);
-            product.Id = Guid.NewGuid().ToString();
+            jsonProduct.Id = Guid.NewGuid();
 
             try
             {
@@ -78,7 +78,8 @@ namespace WMPrakticniZadatak.DAL.Repositories.JSON
 
                 if (productToUpdate == null) return null;
 
-                productToUpdate = jsonProduct;
+                var productIndex = products.IndexOf(productToUpdate);
+                products[productIndex] = jsonProduct;
 
                 var jsonData = JsonSerializer.Serialize(products);
                 File.WriteAllText(_jsonDataPath, jsonData);

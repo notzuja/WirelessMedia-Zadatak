@@ -63,7 +63,7 @@ namespace WMPrakticniZadatak.Services
 
             var dataModel = product.MapDtoToDataModel(true);
 
-            var updatedEntity = _dbContext.Update(dataModel);
+            var updatedEntity = _dbContext.Products.Update(dataModel);
             _dbContext.SaveChanges();
 
             return updatedEntity.Entity.MapDataModeltoDto();
@@ -78,7 +78,11 @@ namespace WMPrakticniZadatak.Services
             if (_useJson)
                 return _productRepository.Delete(productId);
 
-            _dbContext.Remove(productId);
+            var entityToDelete = _dbContext.Products.Find(productId);
+
+            if (entityToDelete == null) return false;
+
+            _dbContext.Products.Remove(entityToDelete);
 
             return _dbContext.SaveChanges() > 0;
         }
